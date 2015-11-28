@@ -61,7 +61,7 @@ public class Server
     		}
     		
     		if(assassin.get() == null){
-    			System.out.println("Assassin disconnected. ");
+    			System.out.println("Assassin disconnected.");
     			break;
     		}
 			
