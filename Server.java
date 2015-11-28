@@ -57,4 +57,8 @@ class Server {
 	//	return data;
 	//}
 	
+	//	public static void dataUpdate(int player, int dead){
+	//		data[player-1][1] = data[dead-1][1];
+	//}
+	
 }
