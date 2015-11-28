@@ -10,6 +10,7 @@ public class Client
     private double latitude;
     private double longitude;
     private int health;
+    private int damage;
     
     public Client(Socket s) throws IOException
     {
@@ -21,6 +22,7 @@ public class Client
 		give("latitude");
 		longitude = Double.parseDouble(get());
 		health = 100;
+		damage = 20;
     }
     
     public void give(String str) throws IOException
@@ -34,7 +36,11 @@ public class Client
     }
     
     public void takeDamage(){
-    	health -= 20;
+    	health -= damage;
+    }
+    
+    public void subtractDamage(int n){
+    	damage -= n;
     }
     
     public int getHealth(){
@@ -84,5 +90,13 @@ public class Client
 			heat = 0;
 		}
 		return heat;
+	}
+	
+	public boolean isStabbing(){
+		//Check if "attack" button is pressed	
+		//return get().equals("true") ? return true: return false ;
+		return get().equals("true");
+	}
+	
 	}
 }

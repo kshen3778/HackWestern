@@ -71,7 +71,7 @@ public class Server
     		
     		
     		assassin.give("assAngle" + assAngle);
-    		victim.give("vicAngle" + vicAngle);
+    		//victim.give("vicAngle" + vicAngle);
     		assassin.give("distance" + distance);
     		assassin.give("heatTone" + heatTone);
     		
@@ -83,15 +83,17 @@ public class Server
  				break;
     		}
     		
- 			if(distance <= 1) {
- 				victim.takeDamage();
- 				victim.give("Health: " + victim.getHealth());
- 				//1.5 second "recovery" time
- 				try {
-    				Thread.sleep(1500);
+ 			if(distance <= 1 && assassin.isStabbing()) {
+	 			victim.takeDamage();
+	 			victim.give("Health: " + victim.getHealth());
+	 			//1 second "recovery" time
+	 			try {
+	    			Thread.sleep(1000);
 				} catch(InterruptedException ex) {
-    				Thread.currentThread().interrupt();
+	    			Thread.currentThread().interrupt();
 				}
+ 			}else if(distance > 1 && assassin.isStabbing()){
+ 				assassin.subtractDamage(2);
  			}
 		}
     }
