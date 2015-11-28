@@ -27,7 +27,7 @@ public class Client
         return in.readLine();
     }
     
-    public static double angleFinder(double targetX, double targetY ){
+    public double angleFinder(double targetX, double targetY ){
 		double theta, angle;
 		theta = Math.atan2(targetY , targetX);
 		theta += Math.PI/360;
@@ -38,7 +38,7 @@ public class Client
 		return angle;
 	}
 	
-	public static double targetDistance(double targetX, double targetY ){
+	public double targetDistance(double targetX, double targetY ){
 		double distance;
 		distance = Math.sqrt((targetX * targetX) + (targetY * targetY));
 		return distance;

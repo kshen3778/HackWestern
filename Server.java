@@ -1,10 +1,6 @@
 import java.io.*; 
 import java.net.*; 
 import java.util.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.Timer;
 
 public class Server
 {    
@@ -38,9 +34,9 @@ public class Server
     	
     	while (true)
     	{
-    		assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
-    		vicAngle = victim.angleFinder(assassin.getLatitude(),assassin.getLongitude());
-    		distance = targetDistance(victim.getLatitude() - assassin.getLatitude(), victim.getLongitude()-assassin.getLongitude());
+    		double assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
+    		double vicAngle = victim.angleFinder(assassin.getLatitude(),assassin.getLongitude());
+    		double distance = targetDistance(victim.getLatitude() - assassin.getLatitude(), victim.getLongitude()-assassin.getLongitude());
  			if(distance <= 100){
  				System.out.println("Assassin has slain the victim. Well played.");
  				assassin.give("Assassin Wins!");
