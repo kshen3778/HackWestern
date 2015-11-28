@@ -1,5 +1,5 @@
-import java.io.*; 
-import java.net.*; 
+import java.io.*;
+import java.net.*;
 import java.util.*;
 
 public class Server
@@ -25,18 +25,18 @@ public class Server
     {
     	Client assassin;
     	Client victim;
-    	double assAngle, vicAngle;
+    	double assAngle, vicAngle, distance;
     	
     	victim = new Client(server.accept());
     	System.out.println("Victim connected.");
-    	assasin = new Client(server.accept());
+    	assassin = new Client(server.accept());
     	System.out.println("Assassin connected.");
     	
     	while (true)
     	{
-    		double assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
-    		double vicAngle = victim.angleFinder(assassin.getLatitude(),assassin.getLongitude());
-    		double distance = targetDistance(victim.getLatitude() - assassin.getLatitude(), victim.getLongitude()-assassin.getLongitude());
+    		 assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
+    		 vicAngle = victim.angleFinder(assassin.getLatitude(),assassin.getLongitude());
+    		 distance = targetDistance(victim.getLatitude() - assassin.getLatitude(), victim.getLongitude()-assassin.getLongitude());
  			if(distance <= 100){
  				System.out.println("Assassin has slain the victim. Well played.");
  				assassin.give("Assassin Wins!");
