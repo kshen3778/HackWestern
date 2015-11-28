@@ -41,7 +41,7 @@ public class Server
 		//	}
 		//	data[0][1] = playerCount;
 		//}
-	}
+	
     	
     	while (true)
     	{
