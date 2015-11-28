@@ -51,11 +51,17 @@ public class Server
     		victim.give("ping");
     		assassin.give("ping");
     		
+    		//debug statements
     		System.out.println(victim.get());
     		System.out.println(assassin.get());
     		
-    		if(victim.get() == null || assassin.get() == null){
-    			System.out.println("Someone disconnected.");
+    		if(victim.get() == null){
+    			System.out.println("Victim disconnected.");
+    			break;
+    		}
+    		
+    		if(assassin.get() == null){
+    			System.out.println("Assassin disconnected. ");
     			break;
     		}
 			
