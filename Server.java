@@ -3,7 +3,7 @@ import java.net.*;
 import java.util.*;
 
 public class Server
-{    
+{
 	private ServerSocket server;
 	
 	public Server() throws IOException
