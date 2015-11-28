@@ -34,7 +34,8 @@ public class Server
     	
     	while (true)
     	{
-    		try {
+    		
+    		/*try {
     			victim.give("ping");
     		} catch (Exception e) {
     			System.out.println("Victim disconnected.");
@@ -44,6 +45,14 @@ public class Server
     			assassin.give("ping");
     		} catch (Exception e) {
     			System.out.println("Assassin disconnected.");
+    			break;
+    		}*/
+    		
+    		victim.give("ping");
+    		assassin.give("ping");
+    		
+    		if(victim.get() != "ping" || assassin.get() != "ping"){
+    			System.out.println("Someone disconnected.");
     			break;
     		}
 			
