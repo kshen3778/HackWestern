@@ -3,12 +3,17 @@ public class Client
     private Socket socket;
     private PrintWriter out;
     private BufferedReader in;
+    private double latitude;
+    private double longitude;
     
     public Client(Socket s) throws IOException
     {
         socket = s;
 		out = new PrintWriter(s.getOutputStream(), true);
 		in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+		//INITIALIZE variables to the longitude and latitude of the phone
+		latitude = 0;
+		longitude = 0;
     }
     
     public void give(String str) throws IOException
@@ -36,6 +41,14 @@ public class Client
 		double distance;
 		distance = Math.sqrt((targetX * targetX) + (targetY * targetY));
 		return distance;
+	}
+	
+	public double getX(){
+	    return x;
+	}
+	
+	public double getY(){
+	    return y;
 	}
     
     
