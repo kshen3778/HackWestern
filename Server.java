@@ -35,18 +35,6 @@ public class Server
     	while (true)
     	{
     		
-    		/*try {
-    			victim.give("ping");
-    		} catch (Exception e) {
-    			System.out.println("Victim disconnected.");
-    			break;
-    		}
-    		try {
-    			assassin.give("ping");
-    		} catch (Exception e) {
-    			System.out.println("Assassin disconnected.");
-    			break;
-    		}*/
     		
     		victim.give("ping");
     		assassin.give("ping");
@@ -82,9 +70,6 @@ public class Server
 		}
     }
     
-	
-	//	public static void dataUpdate(int player, int dead){
-	//		data[player-1][1] = data[dead-1][1];
-	//}
+
 	
 }
