@@ -24,6 +24,7 @@ public class Server
     {
     	Client assassin;
     	Client victim;
+    	double assAngle, vicAngle;
     	
     	victim = new Client(server.accept());
     	System.out.println("Victim connected.");
@@ -32,7 +33,14 @@ public class Server
     	
     	while (true)
     	{
-    		
+    		assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
+    		vicAngle = victim.angleFinder(assassin.getLatitude(),assassin.getLongitude());
+    		distance = targetDistance(victim.getLatitude() - assassin.getLatitude(), victim.getLongitude()-assassin.getLongitude());
+ 			if(distance <= 100){
+ 				System.out.println("Assassin has slain the victim. Well played.");
+ 				assassin.give("Assassin Wins!");
+ 				break;
+ 			}
 		}
     }
     
