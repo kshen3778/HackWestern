@@ -51,7 +51,7 @@ public class Server
     		victim.give("ping");
     		assassin.give("ping");
     		
-    		if(victim.get() != "ping" || assassin.get() != "ping"){
+    		if(!victim.get().equals("ping") || !assassin.get().equals("ping")){
     			System.out.println("Someone disconnected.");
     			break;
     		}
