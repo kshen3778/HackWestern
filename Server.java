@@ -25,12 +25,23 @@ public class Server
     {
     	Client assassin;
     	Client victim;
-    	double assAngle, vicAngle, distance;
+    	double assAngle, vicAngle, distance, heatTone;
     	
     	victim = new Client(server.accept());
     	System.out.println("Victim connected.");
     	assassin = new Client(server.accept());
     	System.out.println("Assassin connected.");
+    	
+    	//public static int[][] data;
+    	//public void gameData(int playerCount){
+		//	data = new int[playerCount][2];
+		//	for(int i = 0; i < playerCount; i++){
+		//		data[i][0] = i+1;
+		//		data[i][1] = i;
+		//	}
+		//	data[0][1] = playerCount;
+		//}
+	}
     	
     	while (true)
     	{
@@ -56,6 +67,15 @@ public class Server
     		assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
     		vicAngle = victim.angleFinder(assassin.getLatitude(),assassin.getLongitude());
     		distance = assassin.targetDistance(victim.getLatitude() - assassin.getLatitude(), victim.getLongitude()-assassin.getLongitude());
+    		heatTone = assassin.heatTone(victim.getLatitude(), victim.getLongitude()); 
+    		
+    		
+    		assassin.give("assAngle" + assAngle);
+    		victim.give("vicAngle" + vicAngle);
+    		assassin.give("distance" + distance);
+    		assassin.give("heatTone" + heatTone);
+    		
+    		
     		
     		if(victim.getHealth() <= 0){
     			System.out.println("Assassin has slain the victim. Well played.");
@@ -65,7 +85,7 @@ public class Server
     		
  			if(distance <= 1) {
  				victim.takeDamage();
- 				victim.give("You are being attacked. Your Health: " + victim.getHealth());
+ 				victim.give("Health: " + victim.getHealth());
  				//1.5 second "recovery" time
  				try {
     				Thread.sleep(1500);

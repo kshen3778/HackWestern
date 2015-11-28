@@ -66,4 +66,23 @@ public class Client
 	    return latitude;
 	}
     
+    public int heatTone(double lat, double lon ){
+		double distance = 0;
+		int heat = 0;
+		distance = Math.sqrt(((lat - latitude) * (lat - latitude)) + ((lon - longitude) * (lon - longitude)));
+		if(distance <= 1){
+			heat = 5;
+		}else if (distance <= 2){
+			heat = 4;
+		}else if (distance <= 4){
+			heat = 3;
+		}else if (distance <= 8){
+			heat = 2;
+		}else if (distance <= 16){
+			heat = 1;
+		}else{
+			heat = 0;
+		}
+		return heat;
+	}
 }
