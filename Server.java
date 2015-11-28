@@ -77,7 +77,7 @@ public class Server
     		
  			if(distance <= 1) {
  				victim.takeDamage();
- 				vicitim.give("You are being attacked. Health: " + victim.getHealth());
+ 				victim.give("You are being attacked. Your Health: " + victim.getHealth());
  			}
 		}
     }
