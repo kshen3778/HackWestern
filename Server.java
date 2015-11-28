@@ -66,9 +66,9 @@ public class Server
  			if(distance <= 1) {
  				victim.takeDamage();
  				victim.give("You are being attacked. Your Health: " + victim.getHealth());
- 				//one second "recovery" time
+ 				//1.5 second "recovery" time
  				try {
-    				Thread.sleep(2000);
+    				Thread.sleep(1500);
 				} catch(InterruptedException ex) {
     				Thread.currentThread().interrupt();
 				}
