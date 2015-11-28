@@ -34,10 +34,23 @@ public class Server
     	
     	while (true)
     	{
-    		 assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
-    		 vicAngle = victim.angleFinder(assassin.getLatitude(),assassin.getLongitude());
-    		 distance = assassin.targetDistance(victim.getLatitude() - assassin.getLatitude(), victim.getLongitude()-assassin.getLongitude());
- 			if(distance <= 100){
+    		try {
+    			victim.give("ping");
+    		} catch (Exception e) {
+    			System.out.println("Victim disconnected.");
+    			break;
+    		}
+    		try {
+    			assassin.give("ping");
+    		} catch (Exception e) {
+    			System.out.println("Assassin disconnected.");
+    			break;
+    		}
+			
+    		assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
+    		vicAngle = victim.angleFinder(assassin.getLatitude(),assassin.getLongitude());
+    		distance = assassin.targetDistance(victim.getLatitude() - assassin.getLatitude(), victim.getLongitude()-assassin.getLongitude());
+ 			if(distance <= 1) {
  				System.out.println("Assassin has slain the victim. Well played.");
  				assassin.give("Assassin Wins!");
  				break;
