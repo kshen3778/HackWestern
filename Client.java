@@ -9,6 +9,7 @@ public class Client
     private BufferedReader in;
     private double latitude;
     private double longitude;
+    private int health;
     
     public Client(Socket s) throws IOException
     {
@@ -19,6 +20,7 @@ public class Client
 		latitude = Double.parseDouble(get());
 		give("latitude");
 		longitude = Double.parseDouble(get());
+		health = 100;
     }
     
     public void give(String str) throws IOException
@@ -29,6 +31,14 @@ public class Client
     public String get() throws IOException
     {
         return in.readLine();
+    }
+    
+    public void takeDamage(){
+    	health -= 20;
+    }
+    
+    public int getHealth(){
+    	return health;
     }
     
     public double angleFinder(double targetX, double targetY ){

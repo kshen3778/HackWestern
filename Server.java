@@ -68,10 +68,16 @@ public class Server
     		assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
     		vicAngle = victim.angleFinder(assassin.getLatitude(),assassin.getLongitude());
     		distance = assassin.targetDistance(victim.getLatitude() - assassin.getLatitude(), victim.getLongitude()-assassin.getLongitude());
- 			if(distance <= 1) {
- 				System.out.println("Assassin has slain the victim. Well played.");
+    		
+    		if(health <= 0){
+    			System.out.println("Assassin has slain the victim. Well played.");
  				assassin.give("Assassin Wins!");
  				break;
+    		}
+    		
+ 			if(distance <= 1) {
+ 				victim.takeDamage();
+ 				vicitim.give("You are being attacked. Health: " + victim.getHealth());
  			}
 		}
     }
