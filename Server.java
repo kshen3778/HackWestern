@@ -28,8 +28,10 @@ public class Server
     	double assAngle, vicAngle, distance, heatTone;
     	
     	victim = new Client(server.accept());
+    	victim.give("victim");
     	System.out.println("Victim connected.");
     	assassin = new Client(server.accept());
+    	assassin.give("assassin");
     	System.out.println("Assassin connected.");
     	
     	//public static int[][] data;

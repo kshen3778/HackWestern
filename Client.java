@@ -98,5 +98,5 @@ public class Client
 		return get().equals("true");
 	}
 	
-	}
+	
 }
