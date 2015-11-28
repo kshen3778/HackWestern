@@ -93,10 +93,8 @@ public class Client
 	}
 	
 	public boolean isStabbing(){
-		//Check if "attack" button is pressed	
-		//return get().equals("true") ? return true: return false ;
-		return get().equals("true");
+		//return get().equals("true");
+		return false;
 	}
-	
 	
 }
