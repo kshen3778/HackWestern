@@ -8,17 +8,22 @@ import javax.swing.Timer;
 
 public class Server
 {    
-	ServerSocket server;
+	private ServerSocket server;
 	
-    public static void main(String[] args) throws Exception       
-    {          
-        try {
+	public Server() throws IOException
+	{
+		try {
 			server = new ServerSocket(8080);
 			listen();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-    } 
+	}
+	
+    public static void main(String[] args) throws IOException       
+    {          
+        new Server();
+    }
     
     public void listen() throws IOException
     {
