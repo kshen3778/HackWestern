@@ -58,9 +58,10 @@ public class Server
     		double assAngle = assassin.angleFinder(vicLat, vicLng);
     		assassin.give("angle " + assAngle);
 			
-			if (distFrom((float)vicLat, (float)vicLng, (float)assLat, (float)assLng) < 2)
+			if (distFrom((float)vicLat, (float)vicLng, (float)assLat, (float)assLng) < 2){
 				System.out.println("hurting distance");
 				victim.give("hurt");
+			}
 			
 			victim.give("health");
 			if (Integer.parseInt(victim.get()) == 0)
