@@ -17,10 +17,13 @@ public class Client
         socket = s;
 		out = new PrintWriter(s.getOutputStream(), true);
 		in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-		give("longitude");
-		latitude = Double.parseDouble(get());
+		System.out.println("client...");
 		give("latitude");
+		latitude = Double.parseDouble(get());
+		System.out.println("latitude: " + latitude);
+		give("longitude");
 		longitude = Double.parseDouble(get());
+		System.out.println("longitude: " + longitude);
 		health = 100;
 		damage = 20;
     }
@@ -31,9 +34,9 @@ public class Client
 	        socket = s;
 			out = new PrintWriter(s.getOutputStream(), true);
 			in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-			give("longitude");
-			latitude = Double.parseDouble(get());
 			give("latitude");
+			latitude = Double.parseDouble(get());
+			give("longitude");
 			longitude = Double.parseDouble(get());
 			health = 100;
 			damage = 20;
