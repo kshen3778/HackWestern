@@ -46,13 +46,16 @@ public class Server
     			break;
     		}
     		
-    		System.out.println("start1");
+    		System.out.println("viclatitude");
     		victim.give("latitude");
 			double vicLat = Double.parseDouble(victim.get());
+		    System.out.println("viclongitude");
 			victim.give("longitude");
 			double vicLng = Double.parseDouble(victim.get());
+			System.out.println("asslatitude");
     		assassin.give("latitude");
 			double assLat = Double.parseDouble(assassin.get());
+			System.out.println("asslongitude");
 			assassin.give("longitude");
 			double assLng = Double.parseDouble(assassin.get());
 			System.out.println("start2");
@@ -71,7 +74,7 @@ public class Server
 				break;
 		}
 		
-		System.out.println("Assassin wins!");
+		//System.out.println("Assassin wins!");
     }
     
 	public static float distFrom(float lat1, float lng1, float lat2, float lng2) {
