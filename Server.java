@@ -46,6 +46,7 @@ public class Server
     			break;
     		}
     		
+    		System.out.println("start1");
     		victim.give("latitude");
 			double vicLat = Double.parseDouble(victim.get());
 			victim.give("longitude");
@@ -54,6 +55,7 @@ public class Server
 			double assLat = Double.parseDouble(assassin.get());
 			assassin.give("longitude");
 			double assLng = Double.parseDouble(assassin.get());
+			System.out.println("start2");
 			
     		double assAngle = assassin.angleFinder(vicLat, vicLng);
     		assassin.give("angle " + assAngle);
