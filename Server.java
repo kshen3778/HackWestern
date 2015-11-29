@@ -69,7 +69,7 @@ public class Server
     			distance = -1*distance;
     		}
 			
-			if(Math.sqrt(distance <= 1.0)){
+			if(Math.sqrt(distance) <= 1){
 				victim.give("hurt");
 			}
 			
