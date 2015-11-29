@@ -25,6 +25,25 @@ public class Client
 		damage = 20;
     }
     
+    public Client(Socket s, boolean b) throws IOException
+    {
+    	if (b) {
+	        socket = s;
+			out = new PrintWriter(s.getOutputStream(), true);
+			in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+			give("longitude");
+			latitude = Double.parseDouble(get());
+			give("latitude");
+			longitude = Double.parseDouble(get());
+			health = 100;
+			damage = 20;
+    	} else {
+	        socket = s;
+			out = new PrintWriter(s.getOutputStream(), true);
+			in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+    	}
+    }
+    
     public void give(String str) throws IOException
     {
         out.println(str);
