@@ -49,6 +49,7 @@ public class Server
     		System.out.println("viclatitude");
     		victim.give("latitude");
 			double vicLat = Double.parseDouble(victim.get());
+			System.out.println(vicLat);
 		    System.out.println("viclongitude");
 			victim.give("longitude");
 			double vicLng = Double.parseDouble(victim.get());
