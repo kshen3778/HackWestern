@@ -59,7 +59,7 @@ public class Server
     		assassin.give("angle " + assAngle);
 			
 			if (distFrom((float)vicLat, (float)vicLng, (float)assLat, (float)assLng) < 2){
-				System.out.println("hurting distance");
+				System.out.println("hurting distance " + distFrom((float)vicLat, (float)vicLng, (float)assLat, (float)assLng));
 				victim.give("hurt");
 			}
 			
