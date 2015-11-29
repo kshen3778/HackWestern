@@ -55,23 +55,23 @@ public class Server
 			double vicLng = Double.parseDouble(victim.get());
 			System.out.println("asslatitude");
     		assassin.give("latitude");
-			double assLat = Double.parseDouble(assassin.get());
+			//double assLat = Double.parseDouble(assassin.get());
 			System.out.println("asslongitude");
 			assassin.give("longitude");
-			double assLng = Double.parseDouble(assassin.get());
+			//double assLng = Double.parseDouble(assassin.get());
 			System.out.println("start2");
 			
     		double assAngle = assassin.angleFinder(vicLat, vicLng);
     		assassin.give("angle " + assAngle);
     		
-    		double distance = (vicLng-assLng) * (vicLng-assLng) + (vicLat - assLat) * (vicLat - assLat);
+    		/*double distance = (vicLng-assLng) * (vicLng-assLng) + (vicLat - assLat) * (vicLat - assLat);
     		if(distance < 0){
     			distance = -1*distance;
     		}
 			
 			if(Math.sqrt(distance) <= 1){
 				victim.give("hurt");
-			}
+			}*/
 			
 			/*System.out.println("distance " + distFrom((float)vicLat, (float)vicLng, (float)assLat, (float)assLng));
 			if (distFrom((float)vicLat, (float)vicLng, (float)assLat, (float)assLng) < 2){
@@ -79,9 +79,9 @@ public class Server
 				victim.give("hurt");
 			}*/
 			
-			victim.give("health");
+			/*victim.give("health");
 			if (Integer.parseInt(victim.get()) == 0)
-				break;
+				break;*/
 		}
 		
 		//System.out.println("Assassin wins!");
