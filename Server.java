@@ -45,9 +45,6 @@ public class Server
     			System.out.println("Assassin disconnected.");
     			break;
     		}
-			
-    		assAngle = assassin.angleFinder(victim.getLatitude(),victim.getLongitude());
-    		assassin.give("angle " + assAngle);
     		
     		victim.give("latitude");
 			double vicLat = Double.parseDouble(victim.get());
@@ -57,6 +54,9 @@ public class Server
 			double assLat = Double.parseDouble(assassin.get());
 			assassin.give("longitude");
 			double assLng = Double.parseDouble(assassin.get());
+			
+    		double assAngle = assassin.angleFinder(vicLat, vicLng);
+    		assassin.give("angle " + assAngle);
 			
 			if (distFrom(vicLat, vicLng, assLat, assLng) < 2)
 				victim.give("hurt");
