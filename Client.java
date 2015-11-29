@@ -92,7 +92,7 @@ public class Client
 		return heat;
 	}
 	
-	public boolean isStabbing(){
+	public boolean isStabbing() throws IOException{
 		return get().equals("true");
 		//return false;
 	}
