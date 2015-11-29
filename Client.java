@@ -94,7 +94,6 @@ public class Client
 	
 	public boolean isStabbing() throws IOException{
 		return get().equals("true");
-		//return false;
 	}
 	
 }
