@@ -93,8 +93,8 @@ public class Client
 	}
 	
 	public boolean isStabbing(){
-		//return get().equals("true");
-		return false;
+		return get().equals("true");
+		//return false;
 	}
 	
 }
