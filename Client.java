@@ -17,13 +17,13 @@ public class Client
         socket = s;
 		out = new PrintWriter(s.getOutputStream(), true);
 		in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-		System.out.println("client...");
+		System.out.println("client..."); // TODO DEBUG
 		give("latitude");
 		latitude = Double.parseDouble(get());
-		System.out.println("latitude: " + latitude);
+		System.out.println("latitude: " + latitude); // TODO DEBUG
 		give("longitude");
 		longitude = Double.parseDouble(get());
-		System.out.println("longitude: " + longitude);
+		System.out.println("longitude: " + longitude); // TODO DEBUG
 		health = 100;
 		damage = 20;
     }
